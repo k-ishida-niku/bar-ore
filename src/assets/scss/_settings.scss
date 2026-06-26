@@ -1,0 +1,10 @@
+$base-color: #3e140e;
+$base-c-bright: #5b1818;
+$font-color: #230b08;
+$font-c-bright: #fff;
+
+@mixin res($bp: 767px) {
+  @media (width > $bp) {
+    @content;
+  }
+}
