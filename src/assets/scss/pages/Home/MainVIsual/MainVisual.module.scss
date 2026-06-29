@@ -1,0 +1,19 @@
+.Mv {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: url(../../../../img/home/mv/mv.webp) no-repeat right -80vw center / cover;
+  filter: grayscale(1) brightness(0.5) blur(5px);
+  position: fixed;
+  inset: 0 auto auto 0;
+  padding: 0 20px;
+  z-index: -1;
+  @include res {
+    background-position: center;
+    padding: 0;
+  }
+  .siteTitle {
+    width: clamp(300px, 25.42vw + 204.675px, 586px);
+  }
+}

@@ -1,0 +1,120 @@
+.about {
+  .intro {
+    overflow-x: clip;
+    position: relative;
+    isolation: isolate;
+    padding-top: 30px;
+    margin-bottom: clamp(120px, 65.48vw + -382.232px, 600px);
+    @include res {
+      padding-top: 0;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 65vw;
+      height: 99%;
+      position: absolute;
+      inset: 0 0 auto auto;
+      background-color: $base-c-bright;
+      z-index: -1;
+      @include res {
+        inset: clamp(30px, 7.37vw + -26.528px, 84px) 0 auto auto;
+      }
+    }
+    .introInner {
+      display: flex;
+      margin-bottom: clamp(71px, 24.98vw + -22.675px, 352px);
+
+      @include res {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+    &__text {
+      color: $font-c-bright;
+      @include res {
+        width: 54%;
+      }
+
+      h2 {
+        font-size: clamp(48px, 4.27vw + 31.988px, 96px);
+        margin-bottom: 40px;
+        font-weight: normal;
+        text-wrap: nowrap;
+        @include res {
+          margin-bottom: 20px;
+        }
+      }
+      .catchCopy {
+        font-size: clamp(24px, 1.07vw + 19.988px, 36px);
+        font-weight: bold;
+        text-wrap: nowrap;
+        margin-bottom: 20px;
+        br {
+          @include res {
+            display: none;
+          }
+        }
+        & + p {
+          text-align: justify;
+        }
+      }
+    }
+    &__img {
+      @include res {
+        max-width: 600px;
+        position: relative;
+      }
+      .intro01 {
+        display: none;
+        @include res {
+          display: block;
+          width: min(64%, 385px);
+          margin-left: auto;
+          transform: translate(6vw, 0);
+        }
+      }
+      .intro02 {
+        display: none;
+        @include res {
+          display: block;
+          width: min(74%, 447px);
+          position: absolute;
+          inset: auto 0 0 auto;
+          transform: translate(-50%, 70%);
+        }
+      }
+    }
+    .floatingImg {
+      display: flex;
+      flex-direction: column;
+      gap: 40px 0;
+      @include res {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .floating01 {
+        width: clamp(225px, 12vw + 180px, 360px);
+        @include res {
+        }
+      }
+      .floating02 {
+        width: clamp(225px, 12vw + 180px, 360px);
+        margin: 0 auto;
+        @include res {
+          margin: 0;
+          transform: translate(0, 72%);
+        }
+      }
+      .floating03 {
+        width: clamp(225px, 12vw + 180px, 360px);
+        margin-left: auto;
+        @include res {
+          margin: 0;
+          transform: translate(0, calc(72% * 2));
+        }
+      }
+    }
+  }
+}

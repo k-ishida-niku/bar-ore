@@ -1,0 +1,40 @@
+.featureItem {
+  width: 90%;
+  margin: 0 auto clamp(60px, 21.83vw + -107.436px, 220px);
+  color: $font-c-bright;
+  @include res {
+    width: min(90vw, 1357px);
+    margin: 0 0 clamp(60px, 21.83vw + -107.436px, 220px);
+    position: relative;
+  }
+  .featureImg {
+    margin-bottom: 20px;
+    @include res {
+      margin-bottom: 0;
+      width: 77%;
+    }
+  }
+  .featureText {
+    width: 100%;
+    @include res {
+      width: 40%;
+      position: absolute;
+      inset: auto 0 0 auto;
+      transform: translate(0, 30%);
+    }
+    h3 {
+      font-size: clamp(32px, 1.36vw + 21.569px, 42px);
+      line-height: 1.5;
+      margin-bottom: 40px;
+      @include res {
+        margin-bottom: 20px;
+      }
+    }
+    p {
+      text-align: justify;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
