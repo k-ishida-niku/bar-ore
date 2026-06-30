@@ -45,12 +45,14 @@ export function About() {
           <div className={style.intro__text}>
             <h2 className="fade-y">Bar Amber Note</h2>
             <p className={`${style.catchCopy} fade-o`}>
-              琥珀色の時間が、<br></br>音と共に溶けていく。
+              琥珀色の時間が、
+              <br />
+              音と共に溶けていく。
             </p>
             <p className="fade-o">扉を開けると、そこにあるのは針がレコードをなぞる柔らかなノイズと、芳醇なウィスキーの香り。 「Bar Amber Note」は、喧騒を離れ、ただ独り静かに夜を深めたい方のための場所です。</p>
           </div>
           <div className={style.intro__img}>
-            <div className={style.intro01}>
+            <div className={`${style.intro01} fade-o`}>
               <img src={intro01} alt="" />
             </div>
             <div className={style.intro02}>
@@ -59,13 +61,13 @@ export function About() {
           </div>
         </div>
         <div className={`inner-m ${style.floatingImg}`}>
-          <div className={style.floating01}>
+          <div className={`${style.floating01} fade-o`}>
             <img src={floating01} alt="" />
           </div>
-          <div className={style.floating02}>
+          <div className={`${style.floating02} fade-o`}>
             <img src={floating02} alt="" />
           </div>
-          <div className={style.floating03}>
+          <div className={`${style.floating03} fade-o`}>
             <img src={floating03} alt="" />
           </div>
         </div>

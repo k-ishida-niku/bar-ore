@@ -16,7 +16,7 @@ export function MainVisual() {
       mvRef.current,
       { filter: "blur(0) brightness(1) grayscale(0)" },
       {
-        filter: "blur(10px) brightness(0.8) grayscale(1)",
+        filter: "blur(10px) brightness(0.6) grayscale(1)",
         scrollTrigger: {
           trigger: mvRef.current,
           start: "top top",

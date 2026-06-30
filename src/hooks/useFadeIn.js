@@ -14,43 +14,44 @@ export const useFadeIn = (options = {}) => {
       const fadeY = ref.current.querySelectorAll(".fade-y");
       const fadeO = ref.current.querySelectorAll(".fade-o");
 
-      gsap.fromTo(
-        fadeY,
-        {
-          opacity: 0,
-          y: 30,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: fadeY,
-            start: "top 80%",
-            toggleActions: "play none none none",
-            invalidateOnRefresh: true,
-            ...options,
+      fadeY.forEach((item) => {
+        gsap.fromTo(
+          item,
+          {
+            opacity: 0,
+            y: 30,
           },
-        },
-      );
-      gsap.fromTo(
-        fadeO,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 1,
-          delay: 10,
-          scrollTrigger: {
-            trigger: fadeO,
-            start: "top 80%",
-            toggleActions: "play none none none",
-            invalidateOnRefresh: true,
-            ...options,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: item,
+              start: "top 80%",
+              toggleActions: "play none none none",
+              invalidateOnRefresh: true,
+              ...options,
+            },
           },
-        },
-      );
+        );
+      });
+
+      fadeO.forEach((item) => {
+        gsap.set(item, { opacity: 0 });
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top 80%",
+          once: true,
+          ...options,
+          onEnter: () => {
+            gsap.to(item, {
+              opacity: 1,
+              duration: 1,
+              delay: 0.5,
+            });
+          },
+        });
+      });
     });
     return () => {
       ctx.revert();
