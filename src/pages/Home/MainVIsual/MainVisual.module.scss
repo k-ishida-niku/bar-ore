@@ -3,17 +3,20 @@
   height: 100vh;
   display: grid;
   place-items: center;
-  background: url(../../../../img/home/mv/mv.webp) no-repeat right -80vw center / cover;
-  filter: grayscale(1) brightness(0.5) blur(5px);
+  background: url(../../../assets/img/home/mv/mv.webp) no-repeat right -80vw center / cover;
   position: fixed;
   inset: 0 auto auto 0;
   padding: 0 20px;
   z-index: -1;
+  filter: blur(0px) brightness(1) grayscale(0);
   @include res {
     background-position: center;
     padding: 0;
   }
   .siteTitle {
     width: clamp(300px, 25.42vw + 204.675px, 586px);
+    img {
+      filter: drop-shadow(#000000b8 0 3px 6px);
+    }
   }
 }
