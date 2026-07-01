@@ -14,9 +14,9 @@ export function MainVisual() {
 
     const animation = gsap.fromTo(
       mvRef.current,
-      { filter: "blur(0) brightness(1) grayscale(0)" },
+      { filter: "blur(0) brightness(1) saturate(1)" },
       {
-        filter: "blur(10px) brightness(0.6) grayscale(1)",
+        filter: "blur(5px) brightness(0.3) saturate(0.3)",
         scrollTrigger: {
           trigger: mvRef.current,
           start: "top top",
@@ -37,7 +37,7 @@ export function MainVisual() {
           trigger: "body",
           start: "top top",
           toggleActions: "play reverse play reverse",
-          markers: true, // 開発中はこれが便利です（終了したら消してください）
+          // markers: true, // 開発中はこれが便利です（終了したら消してください）
           scrub: false,
           invalidateOnRefresh: true,
         },

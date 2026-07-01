@@ -1,0 +1,13 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(20px, 3.56vw + 6.65px, 60px);
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 1000;
+}
+.header .logo {
+  width: clamp(80px, 3.56vw + 66.65px, 120px);
+}/*# sourceMappingURL=Header.module.css.map */

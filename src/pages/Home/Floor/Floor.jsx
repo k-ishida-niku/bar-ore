@@ -1,6 +1,6 @@
 import style from "./Floor.module.scss";
 
-import { SectionTitle } from "../../../components/SectionTitle/SectioniTitle";
+import { SectionTitle } from "../../../components/SectionTitle/SectionTitle";
 import floorImg01 from "../../../assets/img/home/floor/floor01.webp";
 import floorImg02 from "../../../assets/img/home/floor/floor02.webp";
 
@@ -29,11 +29,11 @@ export function Floor() {
   return (
     <section className={style.floor}>
       <div className="inner-m">
-        <SectionTitle titleText="Floor" />
+        <SectionTitle titleText="FLOOR" />
       </div>
-      {floorContents.map((content) => {
+      {floorContents.map((content, index) => {
         return (
-          <div className={style.floorItem} data-bg={content.bg}>
+          <div key={index} className={style.floorItem} data-bg={content.bg}>
             <div className={style.floorImg}>
               <img src={content.img} alt="" />
             </div>

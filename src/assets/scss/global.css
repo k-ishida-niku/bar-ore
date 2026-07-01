@@ -1,16 +1,20 @@
+@charset "UTF-8";
 html {
   scroll-behavior: smooth;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   line-height: 2;
   letter-spacing: 0.06em;
   font-family: "Frank Ruhl Libre", "Noto Serif JP", serif;
 }
+
 h1,
 h2,
 h3,
@@ -19,32 +23,38 @@ h5,
 h6 {
   line-height: 1;
 }
+
 li {
   list-style: none;
 }
+
 a {
   text-decoration: none;
   color: #333;
 }
+
 img {
   width: 100%;
   vertical-align: bottom;
 }
+
 video {
   width: 100%;
   vertical-align: bottom;
 }
-/************* リセット関連ここまで *****************/
 
+/************* リセット関連ここまで *****************/
 .inner-l {
   width: min(90%, 1350px);
   margin: 0 auto;
 }
+
 .inner-m {
   width: min(90%, 1200px);
   margin: 0 auto;
 }
+
 .inner-s {
   width: min(90%, 1100px);
   margin: 0 auto;
-}
+}/*# sourceMappingURL=global.css.map */

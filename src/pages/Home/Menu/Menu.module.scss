@@ -1,0 +1,59 @@
+.menu {
+  padding-top: clamp(80px, 7.11vw + 53.338px, 160px);
+  background: $base-color url(../../../assets/img/home/menu/menu-bg.webp) no-repeat right -240px center / cover;
+  @include res {
+    background-position: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  .menuListContainer {
+    overflow-x: clip;
+    margin-bottom: 60px;
+    .menuList {
+      display: flex;
+      width: 100%;
+      @include res {
+        gap: clamp(20px, 2.73vw + -0.939px, 40px);
+        transform: none !important;
+      }
+      .menuItem {
+        width: 100%;
+        min-width: 0;
+        flex: 0 0 100%;
+        @include res {
+          flex: 1;
+          width: auto;
+        }
+        a {
+          display: block;
+          .menuImg {
+            margin-bottom: 16px;
+          }
+          p {
+            color: $font-c-bright;
+            &.menuName {
+              font-size: clamp(18px, 0.27vw + 15.929px, 20px);
+            }
+            &.price {
+            }
+          }
+        }
+      }
+    }
+  }
+  .menuDesc {
+    color: $font-c-bright;
+    .note {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      @include res {
+        flex-direction: row;
+      }
+      & > p {
+        font-size: clamp(18px, 0.82vw + 11.711px, 24px);
+      }
+    }
+  }
+}
