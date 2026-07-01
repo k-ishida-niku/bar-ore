@@ -21,8 +21,20 @@
     li {
       a {
         color: $font-c-bright;
-        font-size: clamp(20px, 0.36vw + 18.65px, 24px);
-        text-shadow: #00000055 0 3px 6px;
+        font-size: clamp(16px, 0.36vw + 14.65px, 20px);
+        text-shadow: #00000073 0 3px 6px;
+      }
+      &.cta {
+        a {
+          background-color: $font-c-bright;
+          text-shadow: none;
+          color: $font-color;
+          display: block;
+          padding: 10px 20px;
+          font-size: 16px;
+          line-height: 1;
+          font-weight: bold;
+        }
       }
     }
   }

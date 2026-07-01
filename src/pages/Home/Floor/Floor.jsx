@@ -1,0 +1,52 @@
+import style from "./Floor.module.scss";
+
+import { SectionTitle } from "../../../components/SectionTitle/SectioniTitle";
+import floorImg01 from "../../../assets/img/home/floor/floor01.webp";
+import floorImg02 from "../../../assets/img/home/floor/floor02.webp";
+
+const floorContents = [
+  {
+    img: floorImg01,
+    title: "音楽と対話に浸る特等席",
+    text1: "壁一面を埋め尽くすレコードコレクションと、厳選されたボトルを目の前にしたカウンター席。",
+    text2: "ここは、店内の音楽を最も純粋に味わえる場所です。",
+    text3: "お一人でゆっくりと音に没入したい夜はもちろん、バーテンダーとの会話を通じて、その日の気分に寄り添う一杯に出会いたい時にも最適。",
+    text4: "琥珀色の照明に照らされたカウンターで、流れる音と心地よい距離感をお楽しみください。",
+    bg: "COUNTER",
+  },
+  {
+    img: floorImg02,
+    title: "大切な誰かと過ごす、特別な時間",
+    text1: "壁一面を埋め尽くすレコードコレクションと、厳選されたボトルを目の前にしたカウンター席。",
+    text2: "ここは、店内の音楽を最も純粋に味わえる場所です。",
+    text3: "お一人でゆっくりと音に没入したい夜はもちろん、バーテンダーとの会話を通じて、その日の気分に寄り添う一杯に出会いたい時にも最適。",
+    text4: "琥珀色の照明に照らされたカウンターで、流れる音と心地よい距離感をお楽しみください。",
+    bg: "TABLE",
+  },
+];
+
+export function Floor() {
+  return (
+    <section className={style.floor}>
+      <div className="inner-m">
+        <SectionTitle titleText="Floor" />
+      </div>
+      {floorContents.map((content) => {
+        return (
+          <div className={style.floorItem} data-bg={content.bg}>
+            <div className={style.floorImg}>
+              <img src={content.img} alt="" />
+            </div>
+            <div className={style.floorText}>
+              <h3>{content.title}</h3>
+              <p>{content.text1}</p>
+              <p>{content.text2}</p>
+              <p>{content.text3}</p>
+              <p>{content.text4}</p>
+            </div>
+          </div>
+        );
+      })}
+    </section>
+  );
+}

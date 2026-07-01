@@ -1,0 +1,71 @@
+.floor {
+  padding-top: clamp(80px, 3.56vw + 66.65px, 120px);
+  background-color: $base-c-bright;
+  .floorItem {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 30px 0;
+    isolation: isolate;
+    @include res {
+      flex-direction: row;
+      align-items: center;
+    }
+    &::after {
+      content: attr(data-bg);
+      position: absolute;
+      font-size: 50px;
+      inset: 0.2em 0 auto auto;
+      line-height: 0.6;
+      font-weight: bold;
+      color: #ffffffa9;
+      @include res {
+        inset: auto 0 0 auto;
+        z-index: -1;
+        font-size: 120px;
+        color: $base-color;
+      }
+    }
+    &:not(:last-child) {
+      background-color: $base-color;
+      padding-bottom: 60px;
+      &::after {
+        content: attr(data-bg);
+        @include res {
+          inset: 0 0 auto auto;
+          color: $base-c-bright;
+        }
+      }
+
+      @include res {
+        padding-bottom: 0;
+      }
+    }
+    .floorImg {
+      width: 100%;
+      @include res {
+        width: 50%;
+      }
+    }
+    .floorText {
+      width: 90%;
+      color: $font-c-bright;
+      margin: 0 auto;
+      @include res {
+        padding-left: 40px;
+        width: 35%;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: clamp(20px, 0.36vw + 18.65px, 24px);
+        margin-bottom: clamp(30px, 0.89vw + 26.663px, 40px);
+      }
+      p {
+        &:not(:last-child) {
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+}

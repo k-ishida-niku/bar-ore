@@ -18,7 +18,7 @@ export function Nav() {
         <li>
           <a href="">Access</a>
         </li>
-        <li>
+        <li className={style.cta}>
           <a href="">Web予約</a>
         </li>
       </ul>

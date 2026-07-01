@@ -6,11 +6,13 @@ import floating03 from "../../../assets/img/home/about/intro-img-floating03.webp
 import featureIm01 from "../../../assets/img/home/about/feature01.webp";
 import featureIm02 from "../../../assets/img/home/about/feature02.webp";
 import featureIm03 from "../../../assets/img/global/record-player.webp";
+import masterImg from "../../../assets/img/home/about/master.webp";
 
 import style from "./About.module.scss";
 import { Feature } from "../../../components/Feature/Feature";
 
 import { useFadeIn } from "../../../hooks/useFadeIn";
+import { useScale } from "../../../hooks/useScale";
 
 const featureData = [
   {
@@ -38,6 +40,7 @@ const featureData = [
 
 export function About() {
   const ref = useFadeIn();
+  const { scaleRef, textRef } = useScale();
   return (
     <section className={style.about} ref={ref}>
       <div className={style.intro}>
@@ -55,7 +58,7 @@ export function About() {
             <div className={`${style.intro01} fade-o`}>
               <img src={intro01} alt="" />
             </div>
-            <div className={style.intro02}>
+            <div className={`${style.intro02} fade-o`}>
               <img src={intro02} alt="" />
             </div>
           </div>
@@ -76,18 +79,38 @@ export function About() {
         {featureData.map((item, index) => {
           return (
             <li key={index} className={style.featureItem}>
-              <div className={style.featureImg}>
+              <div className={`${style.featureImg} fade-o`}>
                 <img src={item.img} alt={item.alt} />
               </div>
               <div className={style.featureText}>
-                <h3>{item.title}</h3>
-                <p>{item.text1}</p>
-                <p>{item.text2}</p>
+                <h3 className="fade-y">{item.title}</h3>
+                <p className="fade-y">{item.text1}</p>
+                <p className="fade-y">{item.text2}</p>
               </div>
             </li>
           );
         })}
       </ul>
+      <div className={style.message}>
+        <div className={style.messageContainer} ref={scaleRef}>
+          <div className={`${style.messageContent} inner-s`} ref={textRef}>
+            <div className={style.messageText}>
+              <h3>Message</h3>
+              <p>Bar Amber Noteは、忙しい日々の中でふっと立ち止まれるような、静かな時間を提供したいと思い開いた店です。</p>
+              <p>
+                私自身、仕事終わりに落ち着いて飲める場所がほしかったことがきっかけでした。
+                <br />
+                カウンター越しに話すのも良し、一人でレコードを聴きながら過ごすのも良し。 お客様それぞれの「ちょうどいい距離感」を大切にしています。
+              </p>
+              <p>初めての方も、どうぞ気軽にお立ち寄りください。</p>
+              <p className={style.masterName}>店主：佐伯 悠介</p>
+            </div>
+            <div className={style.shopMaster}>
+              <img src={masterImg} alt="佐伯悠介 近影" />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
