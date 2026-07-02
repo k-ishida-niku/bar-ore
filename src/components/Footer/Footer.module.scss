@@ -1,0 +1,64 @@
+.footer {
+  background-color: $base-color;
+  color: $font-c-bright;
+  padding: 60px 0 40px;
+  .footerInner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px 0;
+    margin-bottom: 60px;
+    @include res {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .footerConetnts {
+      .footerLogo {
+        font-size: clamp(28px, 0.36vw + 26.65px, 32px);
+        margin-bottom: 16px;
+      }
+      .footerInfo {
+        font-style: normal;
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+        font-size: clamp(15px, 0.09vw + 14.662px, 16px);
+        .tel {
+          color: $font-c-bright;
+        }
+      }
+    }
+    .footerCta {
+      .footerNav {
+        width: 100%;
+        margin-bottom: 30px;
+        .navList {
+          display: grid;
+          grid-template: auto / repeat(3, 1fr);
+          li {
+            a {
+              color: $font-c-bright;
+              font-size: clamp(16px, 0.36vw + 14.65px, 20px);
+            }
+          }
+        }
+      }
+      .footerCtaBtn {
+        width: 100%;
+        height: 46px;
+        background-color: $font-c-bright;
+        display: grid;
+        place-items: center;
+        font-size: clamp(15px, 0.27vw + 13.988px, 18px);
+        font-weight: bold;
+        @include res {
+          width: 240px;
+        }
+      }
+    }
+  }
+  .copy {
+    text-align: center;
+    font-size: clamp(12px, 0.18vw + 11.325px, 14px);
+    color: #ad8e88;
+  }
+}

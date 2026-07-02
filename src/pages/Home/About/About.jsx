@@ -55,7 +55,7 @@ export function About() {
             <p className="fade-o">扉を開けると、そこにあるのは針がレコードをなぞる柔らかなノイズと、芳醇なウィスキーの香り。 「Bar Amber Note」は、喧騒を離れ、ただ独り静かに夜を深めたい方のための場所です。</p>
           </div>
           <div className={style.intro__img}>
-            <div className={`${style.intro01} fade-o`}>
+            <div className={`${style.intro01} fade-b`}>
               <img src={intro01} alt="" />
             </div>
             <div className={`${style.intro02} fade-o`}>
@@ -64,13 +64,13 @@ export function About() {
           </div>
         </div>
         <div className={`inner-m ${style.floatingImg}`}>
-          <div className={`${style.floating01} fade-o`}>
+          <div className={`${style.floating01} fade-b`}>
             <img src={floating01} alt="" />
           </div>
-          <div className={`${style.floating02} fade-o`}>
+          <div className={`${style.floating02} fade-b`}>
             <img src={floating02} alt="" />
           </div>
-          <div className={`${style.floating03} fade-o`}>
+          <div className={`${style.floating03} fade-b`}>
             <img src={floating03} alt="" />
           </div>
         </div>

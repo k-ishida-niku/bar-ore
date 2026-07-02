@@ -1,5 +1,6 @@
 import style from "./Menu.module.scss";
 import { SectionTitle } from "../../../components/SectionTitle/SectionTitle";
+import { MoreBtn } from "../../../components/MoreBtn/MoreBtn";
 
 import menuImg01 from "../../../assets/img/home/menu/menu01.webp";
 import menuImg02 from "../../../assets/img/home/menu/menu02.webp";
@@ -31,7 +32,7 @@ export function Menu() {
   return (
     <section className={style.menu}>
       <div className="inner-s">
-        <SectionTitle titleText="MENU" />
+        <SectionTitle titleText="MENU" className="mb-60" />
         <div ref={emblaRef} className={style.menuListContainer}>
           <ul className={style.menuList}>
             {menuContents.map((item, index) => {
@@ -61,7 +62,7 @@ export function Menu() {
           </p>
           <div className={style.note}>
             <p>※チャージ料金：500円(お通し付き)</p>
-            <a href="">ボタン</a>
+            <MoreBtn />
           </div>
         </div>
       </div>

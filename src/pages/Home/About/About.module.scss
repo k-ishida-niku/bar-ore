@@ -202,26 +202,36 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 40px;
-        background-color: rgba(255, 255, 255, 0.9);
+        gap: 40px 0;
+        background-color: rgba(255, 255, 255, 0.85);
         padding: 20px;
         @include res {
           flex-direction: row;
-          padding: 30px 120px;
+          padding: 60px 120px;
+          justify-content: space-between;
         }
         .messageText {
+          @include res {
+            width: 55%;
+          }
           h3 {
             font-size: clamp(24px, 0.71vw + 21.337px, 32px);
             margin-bottom: 20px;
           }
           p {
             font-weight: bold;
+            text-align: justify;
             &:not(:last-child) {
               margin-bottom: 1em;
             }
             &.masterName {
               text-align: right;
             }
+          }
+        }
+        .shopMaster {
+          @include res {
+            width: 33%;
           }
         }
       }

@@ -4,6 +4,8 @@ import { SectionTitle } from "../../../components/SectionTitle/SectionTitle";
 import floorImg01 from "../../../assets/img/home/floor/floor01.webp";
 import floorImg02 from "../../../assets/img/home/floor/floor02.webp";
 
+import { useFadeIn } from "../../../hooks/useFadeIn";
+
 const floorContents = [
   {
     img: floorImg01,
@@ -26,23 +28,27 @@ const floorContents = [
 ];
 
 export function Floor() {
+  const ref = useFadeIn();
+
   return (
-    <section className={style.floor}>
+    <section className={style.floor} ref={ref}>
       <div className="inner-m">
-        <SectionTitle titleText="FLOOR" />
+        <SectionTitle titleText="FLOOR" className="mb-40" />
       </div>
       {floorContents.map((content, index) => {
         return (
           <div key={index} className={style.floorItem} data-bg={content.bg}>
-            <div className={style.floorImg}>
+            <div className={`${style.floorImg} fade-o`}>
               <img src={content.img} alt="" />
             </div>
             <div className={style.floorText}>
-              <h3>{content.title}</h3>
-              <p>{content.text1}</p>
-              <p>{content.text2}</p>
-              <p>{content.text3}</p>
-              <p>{content.text4}</p>
+              <h3 className="fade-y">{content.title}</h3>
+              <div className="fade-o">
+                <p>{content.text1}</p>
+                <p>{content.text2}</p>
+                <p>{content.text3}</p>
+                <p>{content.text4}</p>
+              </div>
             </div>
           </div>
         );

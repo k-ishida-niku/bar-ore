@@ -1,5 +1,5 @@
 .menu {
-  padding-top: clamp(80px, 7.11vw + 53.338px, 160px);
+  padding: clamp(80px, 7.11vw + 53.338px, 160px) 0 clamp(60px, 5.33vw + 40.013px, 120px);
   background: $base-color url(../../../assets/img/home/menu/menu-bg.webp) no-repeat right -240px center / cover;
   @include res {
     background-position: center;
@@ -48,8 +48,10 @@
       display: flex;
       flex-direction: column;
       margin-top: 30px;
+      gap: 40px 0;
       @include res {
         flex-direction: row;
+        justify-content: space-between;
       }
       & > p {
         font-size: clamp(18px, 0.82vw + 11.711px, 24px);

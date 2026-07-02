@@ -8,7 +8,7 @@ html {
 }
 body {
   line-height: 2;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   font-family: "Frank Ruhl Libre", "Noto Serif JP", serif;
 }
 h1,
@@ -47,4 +47,24 @@ video {
 .inner-s {
   width: min(90%, 1100px);
   margin: 0 auto;
+}
+
+h2 {
+  &.mb-40 {
+    margin-bottom: 40px;
+  }
+  &.mb-60 {
+    margin-bottom: 60px;
+  }
+}
+
+.fade-y {
+  transition: all 0.5s;
+}
+.fade-o {
+  transition: all 0.5s;
+}
+
+.fade-b {
+  transition: opacity 0.8s, filter 0.5s;
 }

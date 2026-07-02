@@ -1,3 +1,19 @@
 .main {
   padding: 100vh 0 0;
+  .heroBreak {
+    width: 100%;
+    height: 100vh;
+    clip-path: inset(0);
+    .heroBreakImg {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      inset: 0 auto auto 0;
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: left center;
+      }
+    }
+  }
 }

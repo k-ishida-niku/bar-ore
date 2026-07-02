@@ -1,0 +1,10 @@
+.moreBtn {
+  width: 200px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: $font-c-bright;
+  border: 1px solid $font-c-bright;
+  text-shadow: #0000009b 0 3px 6px;
+  box-shadow: #0000009b 0 3px 6px;
+}
