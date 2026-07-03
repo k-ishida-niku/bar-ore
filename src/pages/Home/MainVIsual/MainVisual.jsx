@@ -1,5 +1,4 @@
 import style from "./MainVisual.module.scss";
-import siteTitle from "../../../assets/img/home/mv/site-title.svg";
 
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
@@ -52,9 +51,13 @@ export function MainVisual() {
 
   return (
     <div className={style.Mv} ref={mvRef}>
-      <h1 ref={mainTitle} className={style.siteTitle}>
-        <img src={siteTitle} alt="Bar Amber Note" />
-      </h1>
+      <div className={style.mvInner}>
+        <h1 ref={mainTitle} className={style.siteTitle}>
+          琥珀色の時間が、
+          <br />
+          音と共に溶けていく。
+        </h1>
+      </div>
     </div>
   );
 }

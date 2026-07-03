@@ -4,7 +4,7 @@
     position: relative;
     isolation: isolate;
     padding-top: 30px;
-    margin-bottom: clamp(120px, 65.48vw + -382.232px, 600px);
+    margin-bottom: clamp(120px, 23.11vw + 33.338px, 380px);
     @include res {
       padding-top: 0;
     }
@@ -25,32 +25,32 @@
     .introInner {
       display: flex;
       margin-bottom: clamp(71px, 24.98vw + -22.675px, 352px);
-
+      width: min(90%, 1500px);
+      margin: 0 auto 120px;
       @include res {
         flex-direction: row;
         align-items: center;
+        justify-content: space-between;
+        margin: 0 0 80px auto;
       }
     }
     &__text {
       color: $font-c-bright;
       @include res {
-        width: 54%;
+        width: 40%;
       }
-
-      h2 {
-        font-size: clamp(48px, 4.27vw + 31.988px, 96px);
+      .catchCopy {
+        font-size: clamp(68px, 0.36vw + 66.65px, 72px);
         margin-bottom: 40px;
         font-weight: normal;
         text-wrap: nowrap;
+        font-weight: 600;
+        line-height: 1;
+        text-shadow: #000000aa 0 3px 6px;
+
         @include res {
           margin-bottom: 20px;
         }
-      }
-      .catchCopy {
-        font-size: clamp(24px, 1.07vw + 19.988px, 36px);
-        font-weight: bold;
-        text-wrap: nowrap;
-        margin-bottom: 20px;
         br {
           @include res {
             display: none;
@@ -58,61 +58,80 @@
         }
         & + p {
           text-align: justify;
+          text-shadow: #000000aa 0 3px 6px;
         }
       }
     }
     &__img {
       @include res {
-        max-width: 600px;
+        width: 50%;
         position: relative;
       }
       .intro01 {
         display: none;
+        border: 1px solid yellow;
         @include res {
           display: block;
-          width: min(64%, 385px);
-          margin-left: auto;
-          transform: translate(6vw, 0);
-        }
-      }
-      .intro02 {
-        display: none;
-        @include res {
-          display: block;
-          width: min(74%, 447px);
-          position: absolute;
-          inset: auto 0 0 auto;
-          transform: translate(-50%, 70%);
+          aspect-ratio: 1;
+          overflow: clip;
+          img {
+            height: 100%;
+            object-fit: cover;
+            scale: 1.1;
+          }
         }
       }
     }
     .floatingImg {
       display: flex;
       flex-direction: column;
-      gap: 40px 0;
+      align-items: flex-start;
+      gap: 40px 60px;
       @include res {
         flex-direction: row;
         justify-content: space-between;
       }
       .floating01 {
         width: clamp(225px, 12vw + 180px, 360px);
+        aspect-ratio: 1.024910322837784;
         @include res {
+          transform: translate(0, -10%);
+          flex: 1;
+          width: auto;
+        }
+        img {
+          height: 100%;
+          object-fit: cover;
         }
       }
       .floating02 {
         width: clamp(225px, 12vw + 180px, 360px);
         margin: 0 auto;
+        aspect-ratio: 1.636379706558246;
         @include res {
           margin: 0;
-          transform: translate(0, 72%);
+          transform: translate(0, 25%);
+          flex: 1.5;
+          width: auto;
+        }
+        img {
+          height: 100%;
+          object-fit: cover;
         }
       }
       .floating03 {
         width: clamp(225px, 12vw + 180px, 360px);
         margin-left: auto;
+        aspect-ratio: 0.6672721375283814;
         @include res {
           margin: 0;
-          transform: translate(0, calc(72% * 2));
+          transform: translate(0, 50%);
+          flex: 1;
+          width: auto;
+        }
+        img {
+          height: 100%;
+          object-fit: cover;
         }
       }
     }
@@ -120,18 +139,23 @@
   .featureList {
     .featureItem {
       width: 90%;
-      margin: 0 auto clamp(60px, 21.83vw + -107.436px, 220px);
+      margin: 0 auto clamp(60px, 23.11vw + -26.662px, 320px);
       color: $font-c-bright;
       @include res {
         width: min(90vw, 1357px);
-        margin: 0 0 clamp(60px, 21.83vw + -107.436px, 220px);
+        margin: 0 0 clamp(60px, 23.11vw + -26.662px, 320px);
         position: relative;
       }
       .featureImg {
         margin-bottom: 20px;
+        aspect-ratio: 1.750031390472364;
         @include res {
           margin-bottom: 0;
           width: 77%;
+        }
+        img {
+          height: 100%;
+          object-fit: cover;
         }
       }
       .featureText {
@@ -143,13 +167,16 @@
           transform: translate(0, 30%);
         }
         h3 {
-          font-size: clamp(25px, 1.16vw + 20.65px, 38px);
-          line-height: 1.5;
+          font-size: clamp(25px, 0.77vw + 22.113px, 28px);
           margin-bottom: 40px;
           white-space: pre-wrap;
-          text-shadow: #0000005b 0 3px 6px;
+          text-shadow: #000000aa 0 3px 6px;
+          font-weight: 600;
+          line-height: 1.7;
+
           @include res {
             margin-bottom: 20px;
+            font-size: clamp(28px, 2.43vw + 1.537px, 38px);
           }
         }
         p {
@@ -159,6 +186,9 @@
 
           &:not(:last-child) {
             margin-bottom: 20px;
+          }
+          @include res {
+            font-size: clamp(14px, 0.14vw + 12.926px, 15px);
           }
         }
       }
@@ -217,6 +247,7 @@
           h3 {
             font-size: clamp(24px, 0.71vw + 21.337px, 32px);
             margin-bottom: 20px;
+            font-weight: 500;
           }
           p {
             font-weight: bold;

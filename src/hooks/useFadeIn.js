@@ -5,6 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const useFadeIn = (options = {}) => {
   const ref = useRef(null);
+  options = {};
 
   useLayoutEffect(() => {
     if (!ref.current) {
