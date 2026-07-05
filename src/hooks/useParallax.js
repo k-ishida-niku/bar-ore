@@ -9,13 +9,17 @@ export function useParallax(options = {}) {
     if (!ref) return;
 
     const ctx = gsap.context(() => {
-      gsap.to(ref.current, {
-        y: -100,
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top bottom",
-          scrub: 1,
-        },
+      const paraEl = ref.current.querySelectorAll(".para");
+
+      paraEl.forEach((item) => {
+        gsap.to(item, {
+          yPercent: -20,
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom",
+            scrub: 1,
+          },
+        });
       });
     });
     return () => {

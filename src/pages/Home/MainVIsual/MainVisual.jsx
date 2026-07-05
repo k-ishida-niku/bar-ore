@@ -1,4 +1,6 @@
 import style from "./MainVisual.module.scss";
+import titleLogo from "../../../assets/img/global/title-logo.svg";
+import cCopy from "../../../assets/img/global/mv-catch-copy.svg";
 
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
@@ -53,9 +55,16 @@ export function MainVisual() {
     <div className={style.Mv} ref={mvRef}>
       <div className={style.mvInner}>
         <h1 ref={mainTitle} className={style.siteTitle}>
-          琥珀色の時間が、
-          <br />
-          音と共に溶けていく。
+          <span className={style.catchCopy}>
+            <img src={cCopy} alt="" />
+          </span>
+
+          <span className={style.shopName}>
+            <span>Bar</span>
+            <span>Amber</span>
+            <span>Note</span>
+          </span>
+          <span className={style.shopNameJp}>バー・アンバー・ノート</span>
         </h1>
       </div>
     </div>

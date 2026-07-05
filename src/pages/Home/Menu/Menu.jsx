@@ -9,6 +9,8 @@ import menuImg03 from "../../../assets/img/home/menu/menu03.webp";
 // エンブラカルーセル
 import useEmblaCarousel from "embla-carousel-react";
 
+import { useFadeIn } from "../../../hooks/useFadeIn";
+
 const menuContents = [
   {
     img: menuImg01,
@@ -29,12 +31,13 @@ const menuContents = [
 
 export function Menu() {
   const [emblaRef] = useEmblaCarousel({ loop: true, watchSlides: true });
+  const ref = useFadeIn();
   return (
-    <section className={style.menu}>
+    <section className={style.menu} ref={ref}>
       <div className="inner-s">
         <SectionTitle titleText="MENU" className="mb-60" />
         <div ref={emblaRef} className={style.menuListContainer}>
-          <ul className={style.menuList}>
+          <ul className={`${style.menuList} fade-b`}>
             {menuContents.map((item, index) => {
               return (
                 <li key={index} className={style.menuItem}>
@@ -52,7 +55,7 @@ export function Menu() {
             })}
           </ul>
         </div>
-        <div className={style.menuDesc}>
+        <div className={`${style.menuDesc} fade-y`}>
           <p>
             60種類のウイスキーを始めとする各種お酒・カクテルと、それらによく合う各種フード。
             <br />

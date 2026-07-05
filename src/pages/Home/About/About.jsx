@@ -5,7 +5,7 @@ import floating02 from "../../../assets/img/home/about/intro-img-floating02.webp
 import floating03 from "../../../assets/img/home/about/intro-img-floating03.webp";
 import featureIm01 from "../../../assets/img/home/about/feature01.webp";
 import featureIm02 from "../../../assets/img/home/about/feature02.webp";
-import featureIm03 from "../../../assets/img/global/record-player.webp";
+import featureIm03 from "../../../assets/img/home/about/feature03.webp";
 import masterImg from "../../../assets/img/home/about/master.webp";
 
 import style from "./About.module.scss";
@@ -47,30 +47,38 @@ export function About() {
   const paraRef = useParallax();
   useLenis();
   return (
-    <section className={style.about} ref={ref}>
+    <section
+      className={style.about}
+      ref={(el) => {
+        if (ref) ref.current = el;
+        if (paraRef) paraRef.current = el;
+      }}
+    >
       <div className={style.intro}>
         <div className={style.introInner}>
           <div className={style.intro__text}>
             <h2 className={`${style.catchCopy} fade-y`}>
-              Bar <br /> Amber <br /> Note
+              ウィスキーと音楽。
+              <br />
+              余韻を愉しむ小さな隠れ家
             </h2>
             <p className="fade-o">扉を開けると、そこにあるのは針がレコードをなぞる柔らかなノイズと、芳醇なウィスキーの香り。 「Bar Amber Note」は、喧騒を離れ、ただ独り静かに夜を深めたい方のための場所です。</p>
           </div>
           <div className={style.intro__img}>
             <div className={`${style.intro01} fade-b`}>
-              <img src={intro01} alt="" ref={paraRef} />
+              <img src={intro01} alt="" className="para" />
             </div>
           </div>
         </div>
         <div className={`inner-m ${style.floatingImg}`}>
           <div className={`${style.floating01} fade-b`}>
-            <img src={floating01} alt="" />
+            <img src={floating01} alt="" className="para" />
           </div>
           <div className={`${style.floating02} fade-b`}>
-            <img src={floating02} alt="" />
+            <img src={floating02} alt="" className="para" />
           </div>
           <div className={`${style.floating03} fade-b`}>
-            <img src={floating03} alt="" />
+            <img src={floating03} alt="" className="para" />
           </div>
         </div>
       </div>
@@ -79,7 +87,7 @@ export function About() {
           return (
             <li key={index} className={style.featureItem}>
               <div className={`${style.featureImg} fade-o`}>
-                <img src={item.img} alt={item.alt} />
+                <img src={item.img} alt={item.alt} className="para" />
               </div>
               <div className={style.featureText}>
                 <h3 className="fade-y">{item.title}</h3>
