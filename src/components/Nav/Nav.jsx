@@ -1,7 +1,8 @@
 import style from "./Nav.module.scss";
-export function Nav() {
+export function Nav(props) {
+  const { isActive } = props;
   return (
-    <nav className={style.globalNav}>
+    <nav className={isActive ? `${style.globalNav} ${style.isActive}` : style.globalNav}>
       <ul className={style.navList}>
         <li>
           <a href="">Home</a>

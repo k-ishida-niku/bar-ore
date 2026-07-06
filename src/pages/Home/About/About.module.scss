@@ -154,7 +154,7 @@
           text-shadow: #000000aa 0 3px 6px;
           font-weight: 600;
           line-height: 1.7;
-
+          text-wrap: nowrap;
           @include res {
             margin-bottom: 20px;
             font-size: clamp(28px, 2.43vw + 1.537px, 38px);

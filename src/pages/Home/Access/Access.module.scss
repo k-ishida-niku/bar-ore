@@ -17,91 +17,116 @@
   }
   .info {
     width: 100%;
-    background: url(../../../assets/img/home/access/info-bg.webp) no-repeat center / cover;
-    padding: clamp(50px, 4.44vw + 33.35px, 100px) 0 clamp(60px, 5.33vw + 40.013px, 120px);
-    .infoContents {
-      background-color: rgba(255, 255, 255, 0.9);
+    // background: url(../../../assets/img/home/access/info-bg.webp) no-repeat center / cover;
+    background-color: $font-color;
+    padding: clamp(50px, 4.44vw + 33.35px, 100px) 0 clamp(80px, 8.89vw + 46.662px, 180px);
+    .infoCta {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      gap: 80px 0;
-      padding: clamp(40px, 1.78vw + 33.325px, 60px) 20px clamp(40px, 1.78vw + 33.325px, 60px) clamp(40px, 1.78vw + 33.325px, 60px);
+      align-items: center;
+      gap: 40px 0;
+      margin-bottom: clamp(60px, 5.33vw + 40.013px, 120px);
       @include res {
         flex-direction: row;
+        justify-content: space-between;
       }
-      .infoItem {
-        width: 100%;
+      .infoLogo {
+        width: min(100%, 300px);
         @include res {
-          width: 50%;
+          width: min(40%, 280px);
         }
-        &:last-child {
-          @include res {
-            position: relative;
-            padding-left: clamp(40px, 1.78vw + 33.325px, 60px);
+        @include res($bp: 1199px) {
+          width: min(40%, 380px);
+        }
+        @include res($bp: 1599px) {
+          width: min(40%, 480px);
+        }
+      }
+      .infoTel {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: $font-c-bright;
+        font-size: clamp(24px, 0.71vw + 21.337px, 32px);
+        line-height: 1;
+        & > span {
+          display: block;
+          width: 30px;
+        }
+      }
+      .infoCtaItems {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .infoCtaBtn {
+          width: 240px;
+          height: 48px;
+          display: grid;
+          place-items: center;
+          color: $font-c-bright;
+          border: 1px solid $font-c-bright;
+          transition: all 0.3s;
+          font-weight: bold;
+          &:hover {
+            background-color: $font-c-bright;
+            color: $base-c-bright;
           }
-          &::before {
-            content: "";
+        }
+      }
+      .snsContainer {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        .snsIcon {
+          width: 60px;
+          aspect-ratio: 1;
+          transition: all 0.3s;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+    .infoContents {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      color: $font-c-bright;
+      .infoItem {
+        &.shopImg {
+          width: 27%;
+          aspect-ratio: 0.5;
+          background-color: #ccc;
+          display: none;
+          background: url(../../../assets/img/home/access/shop-overview.webp) no-repeat center / cover;
+
+          @include res {
             display: block;
-            width: 1px;
-            height: 100%;
-            background-color: $font-color;
-            position: absolute;
-            inset: 50% auto auto 0;
-            transform: translate(0, -50%);
           }
         }
-        .infoItemInner {
-          width: 100%;
+        &.infoList {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
           @include res {
-            // width: fit-content;
-            // margin: 0 auto;
+            width: 60%;
           }
-          h3 {
-            font-size: clamp(25px, 1.16vw + 20.65px, 38px);
-            margin-bottom: clamp(30px, 0.89vw + 26.663px, 40px);
-          }
-          .infoList {
+          .infoListItem {
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            .infoListItem {
-              display: flex;
-              flex-direction: column;
-              font-weight: bold;
-              .infoKey {
-                display: block;
-                margin-left: -0.5em;
-                font-size: 14px;
-              }
-              .infoValue {
-              }
-            }
-          }
-          .infoCta {
-            display: grid;
-            place-items: center;
-            width: 260px;
-            height: 60px;
-            border: 1px solid $font-color;
-            font-weight: bold;
-            margin: 40px auto 0;
+            padding-bottom: 40px;
+            border-bottom: 1px solid $font-c-bright;
+            gap: 20px 0;
             @include res {
-              margin: 40px 0 0;
+              flex-direction: row;
+              align-items: center;
             }
-          }
-          .snsContainer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-            @include res {
-              justify-content: flex-start;
+            .infoKey {
+              width: min(20%, 140px);
+              font-size: 15px;
+              color: #ffffffb5;
             }
-            .snsIcon {
-              display: block;
-              width: min(100%, 77px);
-              aspect-ratio: 1;
-              background-color: #ccc;
+            .infoValue {
             }
           }
         }
