@@ -10,12 +10,13 @@
   .menuListContainer {
     overflow-x: clip;
     margin-bottom: 60px;
+    position: relative;
     .menuList {
       display: flex;
       width: 100%;
       @include res {
         gap: clamp(20px, 2.73vw + -0.939px, 40px);
-        transform: none !important;
+        // transform: none !important;
       }
       .menuItem {
         width: 100%;
@@ -35,6 +36,50 @@
             &.menuName {
               font-size: clamp(18px, 0.27vw + 15.929px, 20px);
             }
+          }
+        }
+      }
+    }
+    .btnContainer {
+      width: 100%;
+      position: absolute;
+      inset: 50% auto auto 50%;
+      translate: -50% -50%;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      @include res {
+        display: none;
+      }
+      .slideBtn {
+        background-color: $font-c-bright;
+        display: block;
+        width: 40px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border-color: $base-color;
+        display: grid;
+        place-items: center;
+        pointer-events: auto;
+        &::before {
+          content: "";
+          display: block;
+          width: 30%;
+          aspect-ratio: 1;
+          rotate: 45deg;
+        }
+        &.prevBtn {
+          &::before {
+            border-bottom: 2px solid $base-color;
+            border-left: 2px solid $base-color;
+            translate: 20% 0;
+          }
+        }
+        &.nextBtn {
+          &::before {
+            border-top: 2px solid $base-color;
+            border-right: 2px solid $base-color;
+            translate: -20% 0;
           }
         }
       }

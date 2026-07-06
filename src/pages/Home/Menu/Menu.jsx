@@ -10,6 +10,7 @@ import menuImg03 from "../../../assets/img/home/menu/menu03.webp";
 import useEmblaCarousel from "embla-carousel-react";
 
 import { useFadeIn } from "../../../hooks/useFadeIn";
+import { useCallback } from "react";
 
 const menuContents = [
   {
@@ -30,14 +31,25 @@ const menuContents = [
 ];
 
 export function Menu() {
-  const [emblaRef] = useEmblaCarousel({ loop: true, watchSlides: true });
+  // スライダーのライブラリ「エンブラカルーセル」
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, watchSlides: true });
+  // prevボタンの定義（関数を作ってonClikcに設定
+  const prevClick = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  // nextボタンの定義（関数を作ってonClikcに設定
+  const nextClick = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   const ref = useFadeIn();
   return (
     <section className={style.menu} ref={ref}>
       <div className="inner-s">
         <SectionTitle titleText="MENU" className="mb-60" />
-        <div ref={emblaRef} className={style.menuListContainer}>
-          <ul className={`${style.menuList} fade-b`}>
+        <div ref={emblaRef} className={`${style.menuListContainer} fade-b`}>
+          <ul className={style.menuList}>
             {menuContents.map((item, index) => {
               return (
                 <li key={index} className={style.menuItem}>
@@ -54,6 +66,10 @@ export function Menu() {
               );
             })}
           </ul>
+          <div className={style.btnContainer}>
+            <button type="button" className={`${style.slideBtn} ${style.prevBtn}`} onClick={prevClick}></button>
+            <button type="button" className={`${style.slideBtn} ${style.nextBtn}`} onClick={nextClick}></button>
+          </div>
         </div>
         <div className={`${style.menuDesc} fade-y`}>
           <p>
