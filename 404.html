@@ -3,6 +3,7 @@
   <head>
     <meta name="robots" content="noindex,nofollow" />
     <meta charset="UTF-8" />
+    {/* ❌ /bar-ore/favicon.svg ではなく、最初の状態（ルート相対）に戻す */}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,6 +13,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/bar-ore/src/main.jsx"></script>
+    {/* ❌ /bar-ore/src/main.jsx ではなく、Viteが認識できるルート相対に戻す */}
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
