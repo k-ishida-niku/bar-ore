@@ -1,6 +1,6 @@
-html {
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 * {
   margin: 0;
   padding: 0;
@@ -59,14 +59,18 @@ h2 {
 }
 
 .fade-y {
-  transition: transform 0.5s, opacity 1s 0.1s;
+  transition:
+    transform 0.5s,
+    opacity 1s 0.1s;
 }
 .fade-o {
   transition: all 0.5s;
 }
 
 .fade-b {
-  transition: opacity 0.8s, filter 0.5s;
+  transition:
+    opacity 0.8s,
+    filter 0.5s;
 }
 
 :has(> .para) {

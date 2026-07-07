@@ -3,8 +3,8 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
-  base: "./", // githubpagesやレンタルサーバなどにデプロイする場合は必須
   plugins: [react()],
+  base: "/bar-ore/", // リポジトリ名を指定
   resolve: {
     alias: {
       // src ディレクトリへのエイリアス（@）を設定

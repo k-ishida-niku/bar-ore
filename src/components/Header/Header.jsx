@@ -1,8 +1,8 @@
 import logo from "../../assets/img/global/logo.svg";
 import style from "./Header.module.scss";
 import { Nav } from "../Nav/Nav";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 
 export function Header() {
   const [click, setClick] = useState(false);
@@ -11,6 +11,11 @@ export function Header() {
       return !prev;
     });
   };
+
+  const currentLocation = useLocation();
+  useEffect(() => {
+    setClick(false);
+  }, [currentLocation]);
 
   return (
     <header className={style.header}>

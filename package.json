@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://k-ishida-niku.github.io/bar-ore/",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open /bar-ore/",
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
