@@ -1,4 +1,5 @@
 import style from "./Nav.module.scss";
+import { Link } from "react-router-dom";
 export function Nav(props) {
   const { isActive } = props;
   return (
@@ -11,7 +12,7 @@ export function Nav(props) {
           <a href="">About</a>
         </li>
         <li>
-          <a href="">Menu</a>
+          <Link to="/menu">Menu</Link>
         </li>
         <li>
           <a href="">News</a>

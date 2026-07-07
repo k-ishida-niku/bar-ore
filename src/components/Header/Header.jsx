@@ -2,6 +2,7 @@ import logo from "../../assets/img/global/logo.svg";
 import style from "./Header.module.scss";
 import { Nav } from "../Nav/Nav";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export function Header() {
   const [click, setClick] = useState(false);
@@ -14,9 +15,9 @@ export function Header() {
   return (
     <header className={style.header}>
       <div className={style.logo}>
-        <a href="">
+        <Link to={"/"}>
           <img src={logo} alt="" />
-        </a>
+        </Link>
       </div>
       <Nav isActive={click} />
       <div className={click ? ` ${style.bBtn} ${style.isActive}` : style.bBtn} onClick={handleClick}>

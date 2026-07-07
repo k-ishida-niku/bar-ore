@@ -1,0 +1,37 @@
+.menuIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  margin-bottom: 80px;
+  @include res {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .menuImg {
+    aspect-ratio: 1.322544642857143;
+    @include res {
+      width: 50%;
+    }
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .menuText {
+    color: $font-c-bright;
+    @include res {
+      width: 50%;
+      padding-left: 60px;
+    }
+    h3 {
+      font-size: 24px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 15px;
+      text-align: justify;
+    }
+  }
+}

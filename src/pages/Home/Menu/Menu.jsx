@@ -81,7 +81,7 @@ export function Menu() {
           </p>
           <div className={style.note}>
             <p>※チャージ料金：500円(お通し付き)</p>
-            <MoreBtn />
+            <MoreBtn to="/menu" />
           </div>
         </div>
       </div>

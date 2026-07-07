@@ -1,9 +1,11 @@
 import style from "./MoreBtn.module.scss";
+import { Link } from "react-router-dom";
 
-export function MoreBtn() {
+export function MoreBtn(props) {
+  const { to } = props;
   return (
-    <a href="" className={style.moreBtn}>
+    <Link to={to} className={style.moreBtn}>
       more
-    </a>
+    </Link>
   );
 }

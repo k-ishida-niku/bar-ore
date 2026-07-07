@@ -1,0 +1,11 @@
+.main {
+  padding: 0 0 120px;
+  background-color: #803d3b;
+  .note {
+    width: min(90%, 1100px);
+    margin: 40px auto 0;
+    p {
+      color: #f5f0f0;
+    }
+  }
+}

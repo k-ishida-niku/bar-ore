@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
-  base: "./", // githubpagesやレンタルサーバなどにデプロイする場合は必須
+  // base: "./", // githubpagesやレンタルサーバなどにデプロイする場合は必須
   plugins: [react()],
   resolve: {
     alias: {
