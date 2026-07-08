@@ -53,6 +53,7 @@ export function About() {
         if (ref) ref.current = el;
         if (paraRef) paraRef.current = el;
       }}
+      id="about"
     >
       <div className={style.intro}>
         <div className={style.introInner}>
@@ -90,9 +91,11 @@ export function About() {
                 <img src={item.img} alt={item.alt} className="para" />
               </div>
               <div className={style.featureText}>
-                <h3 className="fade-y">{item.title}</h3>
-                <p className="fade-y">{item.text1}</p>
-                <p className="fade-y">{item.text2}</p>
+                <h3 className="fade-b">{item.title}</h3>
+                <div className="fade-y">
+                  <p>{item.text1}</p>
+                  <p>{item.text2}</p>
+                </div>
               </div>
             </li>
           );

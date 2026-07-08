@@ -59,18 +59,15 @@ h2 {
 }
 
 .fade-y {
-  transition:
-    transform 0.5s,
-    opacity 1s 0.1s;
+  // transition: transform 0.3s, opacity 1s 0.1s;
+  transition: all 0.3s;
 }
 .fade-o {
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 .fade-b {
-  transition:
-    opacity 0.8s,
-    filter 0.5s;
+  transition: opacity 0.3s, filter 0.3s;
 }
 
 :has(> .para) {

@@ -28,7 +28,7 @@ export const useFadeIn = (options = {}) => {
             y: 0,
             scrollTrigger: {
               trigger: item,
-              start: "top 80%",
+              start: "top 90%",
               toggleActions: "play none none none",
               invalidateOnRefresh: true,
               ...options,

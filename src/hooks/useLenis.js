@@ -1,28 +1,32 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export const useLenis = () => {
+  const [lenis, setLenis] = useState(null);
   useEffect(() => {
     // 1. 初期化
-    const lenis = new Lenis({
+    const instance = new Lenis({
       lerp: 0.09,
       smoothWheel: true,
     });
 
+    setLenis(instance);
+
     // 2. GSAPとの同期
-    lenis.on("scroll", ScrollTrigger.update);
+    instance.on("scroll", ScrollTrigger.update);
 
     // 3. ループ処理
     function raf(time) {
-      lenis.raf(time);
+      instance.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
 
     // 4. クリーンアップ
     return () => {
-      lenis.destroy();
+      instance.destroy();
     };
   }, []);
+  return lenis;
 };

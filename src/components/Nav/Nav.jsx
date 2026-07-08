@@ -1,7 +1,14 @@
 import style from "./Nav.module.scss";
 import { Link } from "react-router-dom";
+import { useLenis } from "../../hooks/useLenis";
 export function Nav(props) {
   const { isActive } = props;
+  const lenis = useLenis();
+
+  const handleAnchorClick = (e, id) => {
+    e.preventDefault();
+    lenis.scrollTo(id);
+  };
 
   return (
     <nav className={isActive ? `${style.globalNav} ${style.isActive}` : style.globalNav}>
@@ -10,7 +17,14 @@ export function Nav(props) {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/">About</Link>
+          <a
+            href="#about"
+            onClick={(e) => {
+              handleAnchorClick(e, "#about");
+            }}
+          >
+            About
+          </a>
         </li>
         <li>
           <Link to="/menu">Menu</Link>
@@ -19,7 +33,14 @@ export function Nav(props) {
           <Link to="/">News</Link>
         </li>
         <li>
-          <Link to="/">Access</Link>
+          <a
+            href="#access"
+            onClick={(e) => {
+              handleAnchorClick(e, "#access");
+            }}
+          >
+            Access
+          </a>
         </li>
         <li className={style.cta}>
           <Link to="/">Web予約</Link>

@@ -1,4 +1,5 @@
 import style from "./Footer.module.scss";
+import { Link } from "react-router-dom";
 export function Footer() {
   return (
     <footer className={style.footer}>
@@ -20,19 +21,19 @@ export function Footer() {
           <nav className={style.footerNav}>
             <ul className={style.navList}>
               <li>
-                <a href="">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="">About</a>
+                <Link to="/">About</Link>
               </li>
               <li>
-                <a href="">Menu</a>
+                <Link to="/menu">Menu</Link>
               </li>
               <li>
-                <a href="">News</a>
+                <Link to="/">News</Link>
               </li>
               <li>
-                <a href="">Access</a>
+                <Link to="/">Access</Link>
               </li>
             </ul>
           </nav>

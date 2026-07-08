@@ -6,16 +6,19 @@ import sns01 from "../../../assets/img/global/sns01.svg";
 import sns02 from "../../../assets/img/global/sns02.svg";
 import sns03 from "../../../assets/img/global/sns03.svg";
 
+import { useFadeIn } from "../../../hooks/useFadeIn";
+
 export function Access() {
+  const ref = useFadeIn();
   return (
-    <section className={style.access}>
+    <section className={style.access} ref={ref} id="access">
       <div className="inner-s">
         <SectionTitle titleText="ACCESS" className="mb-40" />
       </div>
       <div className={style.map}>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.6178729124945!2d141.35311647614506!3d43.04947092113717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b2987e6f692bd%3A0xb51ee6a088eeabb4!2z44CSMDY0LTA4MDkg5YyX5rW36YGT5pyt5bmM5biC5Lit5aSu5Yy65Y2X77yZ5p2h6KW_77yT5LiB55uu!5e0!3m2!1sja!2sjp!4v1782959837188!5m2!1sja!2sjp" allowFullScreen="" loading="lazy" referrerPolicy="strict-origin-when-cross-origin"></iframe>
       </div>
-      <div className={style.info}>
+      <div className={`${style.info} fade-y`}>
         <div className="inner-s">
           <div className={style.infoCta}>
             <div className={style.infoLogo}>

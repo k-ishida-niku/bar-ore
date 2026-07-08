@@ -20,11 +20,11 @@
         flex-direction: column;
         font-size: 21px;
         font-weight: bold;
-        font-size: clamp(16px, 0.44vw + 14.35px, 21px);
+        font-size: clamp(15px, 0.09vw + 14.662px, 16px);
       }
       &Value {
-        font-size: clamp(21px, 0.62vw + 18.675px, 28px);
         font-weight: bold;
+        font-size: clamp(21px, 0.27vw + 19.988px, 24px);
       }
     }
   }
