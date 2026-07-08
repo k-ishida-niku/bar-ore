@@ -14,7 +14,7 @@ import { Feature } from "../../../components/Feature/Feature";
 import { useFadeIn } from "../../../hooks/useFadeIn";
 import { useScale } from "../../../hooks/useScale";
 import { useParallax } from "../../../hooks/useParallax";
-import { useLenis } from "../../../hooks/useLenis";
+// import { useLenis } from "../../../hooks/useLenis";
 // gsap
 
 const featureData = [
@@ -45,7 +45,7 @@ export function About() {
   const ref = useFadeIn();
   const { scaleRef, textRef } = useScale();
   const paraRef = useParallax();
-  useLenis();
+  // useLenis();
   return (
     <section
       className={style.about}

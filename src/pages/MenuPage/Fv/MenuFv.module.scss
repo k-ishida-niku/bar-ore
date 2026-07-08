@@ -33,4 +33,24 @@
       }
     }
   }
+  .fvImg {
+    width: 60%;
+    height: 100%;
+    overflow: clip;
+    clip-path: polygon(49% 0, 100% 0, 100% 100%, 0 100%);
+    position: absolute;
+    inset: 0 0 auto auto;
+    z-index: 1;
+    opacity: 0.5;
+    mix-blend-mode: color-dodge;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: -200px center;
+      @include res {
+        object-position: center;
+      }
+    }
+  }
 }

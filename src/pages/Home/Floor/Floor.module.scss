@@ -46,6 +46,14 @@
       width: 100%;
       @include res {
         width: 50%;
+        height: 100%;
+        position: absolute;
+        inset: 0 auto auto 0;
+        z-index: -2;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
     .floorText {
@@ -53,16 +61,22 @@
       color: $font-c-bright;
       margin: 0 auto;
       @include res {
-        padding-left: 40px;
+        padding: 40px;
+        width: 100%;
+        margin: 0 0 0 50%;
+      }
+      @include res($bp: 1199px) {
         width: 35%;
-        margin: 0;
+        padding: 40px 0 40px 40px;
       }
 
       h3 {
         font-size: clamp(20px, 0.36vw + 18.65px, 24px);
-        margin-bottom: clamp(30px, 0.89vw + 26.663px, 40px);
+        margin-bottom: clamp(20px, 0.89vw + 16.663px, 30px);
+        line-height: 1.7;
       }
       p {
+        text-align: justify;
         &:not(:last-child) {
           margin-bottom: 1em;
         }
