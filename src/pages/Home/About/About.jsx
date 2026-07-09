@@ -23,21 +23,21 @@ const featureData = [
     title: "一人、静かに、\n夜を過ごす",
     text1: "お一人様でも気兼ねなく、自分のペースで過ごせる空間。\nウィスキーと、アナログレコードの温かいサウンドが、一日の終わりを穏やかに彩ります。",
     text2: "「今日は一人で静かに飲みたい」という夜こそ、ぜひお立ち寄りください。どなた様もどうぞ、肩の力を抜いてお越しください。",
-    alt: "テスト",
+    alt: "一人でウィスキーをのむ男性の手",
   },
   {
     img: featureIm02,
     title: "あなたの「最初の一杯」を、\nここから",
     text1: "「バーは少し敷居が高い」\nBar Amber Noteは、そんな風に感じている方にこそ、訪れてほしい場所です。 60種類揃えたウィスキーの中から、あなたの好みにぴったりの一杯を一緒に見つけましょう。",
     text2: "まずは難しいことは考えず、香りや色の違いを眺めるだけ。琥珀色のグラスを片手に、少しずつ自分の「好き」を見つける楽しさを分かち合いましょう。",
-    alt: "テスト",
+    alt: "買うたーに並ぶウィスキー",
   },
   {
     img: featureIm03,
     title: "あなたの気分に\n合わせた一曲を",
     text1: "棚に並ぶレコードから、その時の気分に合わせた一枚を。\nアナログ特有の温かみのある音が、ウォールナットのカウンターに柔らかく響き渡ります。",
     text2: "お気に入りの名盤をリクエストするもよし、店主のセレクトに身を委ねるもよし。琥珀色のグラスを傾けながら、あなただけの「音」と「時間」をゆっくりとお愉しみください。",
-    alt: "テスト",
+    alt: "レコードプレイヤー",
   },
 ];
 
@@ -67,19 +67,19 @@ export function About() {
           </div>
           <div className={style.intro__img}>
             <div className={`${style.intro01} fade-b`}>
-              <img src={intro01} alt="" className="para" />
+              <img src={intro01} alt="ウィスキーグラス" className="para" />
             </div>
           </div>
         </div>
         <div className={`inner-m ${style.floatingImg}`}>
           <div className={`${style.floating01} fade-b`}>
-            <img src={floating01} alt="" className="para" />
+            <img src={floating01} alt="ワイングラス" className="para" />
           </div>
           <div className={`${style.floating02} fade-b`}>
-            <img src={floating02} alt="" className="para" />
+            <img src={floating02} alt="レコードプレイヤー" className="para" />
           </div>
           <div className={`${style.floating03} fade-b`}>
-            <img src={floating03} alt="" className="para" />
+            <img src={floating03} alt="カクテル" className="para" />
           </div>
         </div>
       </div>

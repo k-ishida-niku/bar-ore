@@ -24,7 +24,7 @@ export function Header() {
           <img src={logo} alt="" />
         </Link>
       </div>
-      <Nav isActive={click} />
+      <Nav isActive={click} handleClick={handleClick} />
       <div className={click ? ` ${style.bBtn} ${style.isActive}` : style.bBtn} onClick={handleClick}>
         <span></span>
         <span></span>
