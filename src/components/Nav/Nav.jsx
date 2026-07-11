@@ -1,14 +1,21 @@
 import style from "./Nav.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLenis } from "../../hooks/useLenis";
 export function Nav(props) {
   const { isActive, handleClick } = props;
   const lenis = useLenis();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleAnchorClick = (e, id) => {
     e.preventDefault();
-    console.log("Nav clicked!");
-    lenis.scrollTo(id);
+    if (location.pathname === "/") {
+      lenis.scrollTo(id);
+      console.log(location.pathname);
+    } else {
+      navigate("/", { state: { scrollToId: id } });
+      console.log(location.pathname);
+    }
   };
 
   return (

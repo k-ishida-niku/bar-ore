@@ -8,6 +8,7 @@ import { MenuPage } from "./pages/MenuPage/MenuPage";
 import { ChangePageScrollY } from "./components/ChangePageScrollY/ChangePageScrollY";
 import { useGsapRefresh } from "./hooks/useGsaRefresh";
 import { useLenis } from "./hooks/useLenis";
+import { ToTopBtn } from "./components/ToTopBtn/ToTopBtn";
 
 function LayOut() {
   useGsapRefresh();
@@ -26,29 +27,31 @@ function App() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<LayOut />}>
-          <Route
-            index
-            element={
-              <PageWrapper>
-                <Home />
-              </PageWrapper>
-            }
-          />
-
-          <Route
-            path="menu"
-            element={
-              <PageWrapper>
-                <MenuPage />
-              </PageWrapper>
-            }
-          />
-        </Route>
-      </Routes>
-    </AnimatePresence>
+    <>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<LayOut />}>
+            <Route
+              index
+              element={
+                <PageWrapper>
+                  <Home />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="menu"
+              element={
+                <PageWrapper>
+                  <MenuPage />
+                </PageWrapper>
+              }
+            />
+          </Route>
+        </Routes>
+      </AnimatePresence>
+      <ToTopBtn />
+    </>
   );
 }
 export default App;

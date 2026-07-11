@@ -1,0 +1,20 @@
+.toTopBtn {
+  width: clamp(40px, 1.78vw + 33.325px, 60px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  inset: auto 1vw 1vh auto;
+  background-color: #91524b;
+  box-shadow: #140b0a42 -3px -3px 10px;
+  &::after {
+    content: "";
+    display: block;
+    width: 25%;
+    aspect-ratio: 1;
+    border-top: 2px solid $font-c-bright;
+    border-right: 2px solid $font-c-bright;
+    rotate: -45deg;
+    translate: 0 40%;
+  }
+}

@@ -1,0 +1,15 @@
+.toTopBtn {
+  width: clamp(40px, 1.78vw + 33.325px, 60px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  inset: auto 0 0 auto;
+  background-color: #91524b;
+  box-shadow: rgba(20, 11, 10, 0.2588235294) -3px -3px 10px;
+}
+.toTopBtn::after {
+  content: "";
+  display: block;
+}
+/*# sourceMappingURL=ToTopBtn.module.css.map */
