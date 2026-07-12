@@ -1,0 +1,63 @@
+.articlesPage {
+  .aricleInner {
+    padding: clamp(60px, 5.33vw + 40.013px, 120px) 0 clamp(80px, 7.11vw + 53.338px, 160px);
+    background-color: #803d3b;
+    .articleList {
+      display: grid;
+      grid-template: auto / repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px 30px;
+      margin-bottom: 80px;
+    }
+  }
+  .pageNation {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    .pageNationBtn {
+      width: 40px;
+      aspect-ratio: 1;
+      border: none;
+      outline: none;
+      display: block;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: all 0.3s;
+      &:hover {
+        opacity: 0.6;
+      }
+      &.prevNextBtn {
+        background-color: transparent;
+        &::before {
+          content: "";
+          display: block;
+          width: 30%;
+          aspect-ratio: 1;
+          border-top: 3px solid $font-c-bright;
+          border-right: 3px solid $font-c-bright;
+        }
+        &.prevBtn {
+          &::before {
+            rotate: -135deg;
+            translate: 25% 0;
+          }
+        }
+        &.nextBtn {
+          &::before {
+            rotate: 45deg;
+            translate: -25% 0;
+          }
+        }
+      }
+      &.pageNum {
+        font-size: clamp(18px, 0.18vw + 17.325px, 20px);
+        font-weight: bold;
+
+        &.currentPage {
+          background-color: $base-color;
+          color: $font-c-bright;
+        }
+      }
+    }
+  }
+}

@@ -23,7 +23,7 @@ export function News() {
               );
             })}
           </ul>
-          <MoreBtn />
+          <MoreBtn to="/news" />
         </div>
         <div className={`${style.newsImg} fade-b`}>
           <img src={newsImg} alt="" />

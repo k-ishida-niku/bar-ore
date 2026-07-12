@@ -3,8 +3,11 @@ import { Footer } from "./components/Footer/Footer";
 import { Routes, Route, Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion"; // これを追加
 import { PageWrapper } from "./components/PageWrapper/PageWrapper";
+
 import { Home } from "./pages/Home/Home";
 import { MenuPage } from "./pages/MenuPage/MenuPage";
+import { Articles } from "./pages/Articles/Articles";
+
 import { ChangePageScrollY } from "./components/ChangePageScrollY/ChangePageScrollY";
 import { useGsapRefresh } from "./hooks/useGsaRefresh";
 import { useLenis } from "./hooks/useLenis";
@@ -44,6 +47,14 @@ function App() {
               element={
                 <PageWrapper>
                   <MenuPage />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="news"
+              element={
+                <PageWrapper>
+                  <Articles />
                 </PageWrapper>
               }
             />

@@ -1,0 +1,25 @@
+.articlesPage .aricleInner {
+  padding: clamp(60px, 5.33vw + 40.013px, 120px) 0 clamp(80px, 7.11vw + 53.338px, 160px);
+  background-color: #803d3b;
+}
+.articlesPage .aricleInner .articleList {
+  display: grid;
+  grid-template: auto/repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px 30px;
+  margin-bottom: 60px;
+}
+.articlesPage .pageNation {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.articlesPage .pageNation .pageNum {
+  display: block;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: clamp(18px, 0.18vw + 17.325px, 20px);
+  font-weight: bold;
+  border: none;
+  outline: none;
+}
+/*# sourceMappingURL=Articles.module.css.map */
