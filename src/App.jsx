@@ -1,5 +1,3 @@
-import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
 import { Routes, Route, Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion"; // これを追加
 import { PageWrapper } from "./components/PageWrapper/PageWrapper";
@@ -7,6 +5,7 @@ import { PageWrapper } from "./components/PageWrapper/PageWrapper";
 import { Home } from "./pages/Home/Home";
 import { MenuPage } from "./pages/MenuPage/MenuPage";
 import { Articles } from "./pages/Articles/Articles";
+import { ContactPage } from "./pages/ContactPage/ContactPage";
 
 import { ChangePageScrollY } from "./components/ChangePageScrollY/ChangePageScrollY";
 import { useGsapRefresh } from "./hooks/useGsaRefresh";
@@ -19,9 +18,7 @@ function LayOut() {
   return (
     <>
       <ChangePageScrollY />
-      <Header />
       <Outlet />
-      <Footer />
     </>
   );
 }
@@ -55,6 +52,14 @@ function App() {
               element={
                 <PageWrapper>
                   <Articles />
+                </PageWrapper>
+              }
+            />
+            <Route
+              path="contact"
+              element={
+                <PageWrapper>
+                  <ContactPage />
                 </PageWrapper>
               }
             />

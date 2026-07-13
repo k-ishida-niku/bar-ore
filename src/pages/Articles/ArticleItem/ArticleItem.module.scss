@@ -9,11 +9,21 @@
       aspect-ratio: 16/9;
       background-color: #ccc;
       margin-bottom: 20px;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
     }
     .articleDesc {
       h3 {
-        font-size: clamp(16px, 0.18vw + 15.325px, 18px);
+        font-size: clamp(15px, 0.09vw + 14.662px, 16px);
         color: $font-c-bright;
+        font-weight: normal;
+        line-height: 1.5;
+      }
+      time {
+        color: $font-c-bright;
+        font-size: clamp(14px, 0.09vw + 13.662px, 15px);
       }
     }
   }

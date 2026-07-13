@@ -10,6 +10,9 @@ import { motion } from "framer-motion"; // これを追加
 //   ease: "easeInOut",
 // };
 
+import { Header } from "../Header/Header";
+import { Footer } from "../Footer/Footer";
+
 export function PageWrapper({ children }) {
   return (
     <motion.div
@@ -33,7 +36,9 @@ export function PageWrapper({ children }) {
         ease: "easeInOut",
       }}
     >
+      <Header />
       {children}
+      <Footer />
     </motion.div>
   );
 }

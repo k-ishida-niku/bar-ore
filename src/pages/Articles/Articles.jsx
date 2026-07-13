@@ -9,33 +9,82 @@ gsap.registerPlugin(ScrollTrigger);
 
 import { useEffect, useRef } from "react";
 
+// まとめてオブジェクトとして取得
+const images = import.meta.glob("../../assets/img/thumbnail/thumbnail*.webp", {
+  eager: true, // 同期的にインポート
+  import: "default", // default exportを取得
+});
+
+// images の中身は { '../../assets/img/thumbnail/thumbnail01.webp': '/assets/img/thumbnail01.hash.webp', ... } となります
+
+// 配列に変換して使いやすくする
+const thumbList = Object.values(images);
+
+// これで thumbList[0] が thumbnail01.webp のパスになります
+
 const articleContents = [
   {
     title: "今月のおすすめウィスキー",
+    dateTime: "2026-07-13",
+    date: "2026.07.13",
+    thumb: thumbList[0],
+    alt: "ウィスキーの写真",
   },
   {
     title: "休業のお知らせ",
+    dateTime: "2026-07-10",
+    date: "2026.07.10",
+    thumb: thumbList[1],
+    alt: "玄関の写真",
   },
   {
-    title: "お知らせお知らせ",
+    title: "新作オリジナルカクテルのご紹介",
+    dateTime: "2026-07-05",
+    date: "2026.07.05",
+    thumb: thumbList[2],
+    alt: "オリジナルカクテルの写真",
   },
   {
-    title: "お知らせお知らせ",
+    title: "初夏のテイスティングナイト開催",
+    dateTime: "2026-06-28",
+    date: "2026.06.28",
+    thumb: thumbList[3],
+    alt: "楽しそうに乾杯する写真",
   },
   {
-    title: "お知らせお知らせ",
+    title: "営業時間の変更に関するご案内",
+    dateTime: "2026-06-20",
+    date: "2026.06.20",
+    thumb: thumbList[4],
+    alt: "店内の俯瞰写真",
   },
   {
-    title: "お知らせお知らせ",
+    title: "ウイスキーの奥深い世界：熟成樽の違い",
+    dateTime: "2026-06-15",
+    date: "2026.06.15",
+    thumb: thumbList[5],
+    alt: "熟成樽の写真",
   },
   {
-    title: "お知らせお知らせ",
+    title: "公式オンラインショップを開設いたしました",
+    dateTime: "2026-06-01",
+    date: "2026.06.01",
+    thumb: thumbList[6],
+    alt: "並ぶウィスキーボトルの写真",
   },
   {
-    title: "お知らせお知らせ",
+    title: "今週のおすすめおつまみペアリング",
+    dateTime: "2026-05-24",
+    date: "2026.05.24",
+    thumb: thumbList[7],
+    alt: "ウィスキーとおつまみの写真",
   },
   {
-    title: "お知らせお知らせ",
+    title: "貸切営業に伴う通常営業時間の短縮について",
+    dateTime: "2026-05-10",
+    date: "2026.05.10",
+    thumb: thumbList[8],
+    alt: "マスターの近影写真",
   },
 ];
 
@@ -72,7 +121,7 @@ export function Articles() {
           {articleContents.map((item, index) => {
             return (
               <li key={index}>
-                <ArticleItem title={item.title} />
+                <ArticleItem title={item.title} dateTime={item.dateTime} date={item.date} thumb={item.thumb} alt={item.alt} />
               </li>
             );
           })}

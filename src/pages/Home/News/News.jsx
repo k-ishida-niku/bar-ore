@@ -5,7 +5,28 @@ import { MoreBtn } from "../../../components/MoreBtn/MoreBtn";
 
 import { useFadeIn } from "../../../hooks/useFadeIn";
 
-const newsContents = ["今月のおすすめウイスキー", "休業のお知らせ", "お知らせお知らせお知らせお知らせお知らせ", "お知らせお知らせお知らせお知らせお知らせ"];
+const newsContents = [
+  {
+    title: "今月のおすすめウィスキー",
+    dateTime: "2026-07-13",
+    date: "2026.07.13",
+  },
+  {
+    title: "休業のお知らせ",
+    dateTime: "2026-07-10",
+    date: "2026.07.10",
+  },
+  {
+    title: "新作オリジナルカクテルのご紹介",
+    dateTime: "2026-07-05",
+    date: "2026.07.05",
+  },
+  {
+    title: "初夏のテイスティングナイト開催",
+    dateTime: "2026-06-28",
+    date: "2026.06.28",
+  },
+];
 
 export function News() {
   const ref = useFadeIn();
@@ -18,7 +39,12 @@ export function News() {
             {newsContents.map((item, index) => {
               return (
                 <li key={index} className={`${style.newsItem} fade-y`}>
-                  <a href="">{newsContents[index]}</a>
+                  <a href="">
+                    <span>
+                      <time dateTime={item.dateTime}>{item.date}</time>
+                      {item.title}
+                    </span>
+                  </a>
                 </li>
               );
             })}

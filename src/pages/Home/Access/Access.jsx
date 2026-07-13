@@ -8,6 +8,8 @@ import sns03 from "../../../assets/img/global/sns03.svg";
 
 import { useFadeIn } from "../../../hooks/useFadeIn";
 
+import { Link } from "react-router-dom";
+
 export function Access() {
   const ref = useFadeIn();
   return (
@@ -31,9 +33,9 @@ export function Access() {
                 </span>
                 03-1234-5678
               </a>
-              <a href="" className={style.infoCtaBtn}>
+              <Link to="/contact" className={style.infoCtaBtn}>
                 メールで予約する
-              </a>
+              </Link>
             </div>
 
             <div className={style.snsContainer}>

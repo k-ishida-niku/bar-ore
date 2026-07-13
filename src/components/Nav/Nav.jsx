@@ -53,7 +53,7 @@ export function Nav(props) {
           </a>
         </li>
         <li className={style.cta}>
-          <Link to="/">Web予約</Link>
+          <Link to="/contact">Web予約</Link>
         </li>
       </ul>
     </nav>

@@ -37,9 +37,9 @@ export function Footer() {
               </li>
             </ul>
           </nav>
-          <a href="" className={style.footerCtaBtn}>
+          <Link to="/contact" className={style.footerCtaBtn}>
             Web予約
-          </a>
+          </Link>
         </div>
       </div>
       <p className={style.copy}>

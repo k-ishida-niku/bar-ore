@@ -1,0 +1,77 @@
+.contactPage {
+  .contactInner {
+    padding: 120px 0;
+    width: min(90%, 900px);
+    margin: 0 auto;
+    form {
+      dl {
+        margin-bottom: 80px;
+        dt {
+          color: $font-c-bright;
+          margin-bottom: 10px;
+        }
+        dd {
+          color: $font-c-bright;
+          &:not(:last-child) {
+            margin-bottom: 40px;
+          }
+          &:has(.timeContainer) {
+            display: flex;
+            gap: 20px 40px;
+            flex-direction: column;
+            @include res {
+              flex-direction: row;
+              align-items: center;
+            }
+          }
+          .timeContainer {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: $font-c-bright;
+            & > div {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              & > select {
+                padding: 5px 8px;
+                font-size: 16px;
+              }
+              & > span {
+                color: $font-c-bright;
+              }
+            }
+          }
+          label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+        }
+      }
+      input {
+        padding: 5px 8px;
+        font-size: 16px;
+        &:not([name="how-many"], [name="date"]) {
+          width: 100%;
+        }
+      }
+      .submitBtn {
+        width: 200px;
+        height: 50px;
+        display: block;
+        margin: 0 auto;
+        cursor: pointer;
+        font-weight: bold;
+        background-color: $base-c-bright;
+        border: none;
+        outline: none;
+        color: $font-c-bright;
+        transition: all 0.3s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
